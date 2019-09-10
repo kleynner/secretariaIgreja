@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:body>
+
+        <b:container fluid="true">
+
+            <b:row>
+
+                <b:column col-md="12" col-sm="9"  styleClass="main">
+                    
+                    <b:button outcome="novo-membro" icon="plus"/>
+                    <br/>
+                    <br/>
+
+                    <b:panel title="LISTA DE MEMBROS ARMAZENADOS" look="primary">
+                        
+                        <b:form>
+                            <b:dataTable value="#{membroMB.membros}" var="membro">
+                                
+                                <b:column style="text-align: center">
+                                    <f:facet name="header">
+                                        <p:outputLabel value="Número"/>                                        
+                                    </f:facet>
+                                    <h:outputText value="#{membro.idMembro}" />
+                                </b:column>
+                                <b:column style="text-align: center">
+                                    <f:facet name="header">
+                                        <p:outputLabel value="Nome"/>                                        
+                                    </f:facet>
+                                    <h:outputText value="#{membro.nomeMembro}" />
+                                </b:column>
+                                <b:column style="text-align: center">
+                                    <f:facet name="header">
+                                        <p:outputLabel value="Sobrenome"/>                                        
+                                    </f:facet>
+                                    <h:outputText value="#{membro.sobrenomeMembro}" />
+                                </b:column>
+                                <b:column style="text-align: center">
+                                    <f:facet name="header">
+                                        <p:outputLabel value="Bilhete de Identidade"/>                                        
+                                    </f:facet>
+                                    <h:outputText value="#{membro.biMembro}" />
+                                </b:column>
+                                <b:column style="text-align: center">
+                                    <f:facet name="header">
+                                        <p:outputLabel value="Naturalidade"/>                                        
+                                    </f:facet>
+                                    <h:outputText value="#{membro.municipio}" />
+                                </b:column>
+                                <b:column style="text-align: center">
+                                    <f:facet name="header">
+                                        <p:outputLabel value="Data de Nascimento"/>                                        
+                                    </f:facet>
+                                    <h:outputText value="#{membro.dataNascimento}">
+                                        <f:convertDateTime parent="dd/MM/yyyy"/>
+                                    </h:outputText>
+                                </b:column>
+                                <b:column style="text-align: center">
+                                    <f:facet name="header">
+                                        <p:outputLabel value="Estado Civil"/>                                        
+                                    </f:facet>
+                                    <h:outputText value="#{membro.estadoCivil}" />
+                                </b:column>
+                                <b:column style="text-align: center">
+                                    <f:facet name="header">
+                                        <p:outputLabel value="Data de Baptismo"/>                                        
+                                    </f:facet>
+                                    <h:outputText value="#{membro.dataBaptismo}">
+                                        <f:convertDateTime parent="dd/MM/yyyy"/>
+                                    </h:outputText>
+                                </b:column>
+                                
+                                <b:dataTableColumn style="text-align: center" label="Operações">
+                                    <b:commandButton size="sm" icon="search" update=":ver" oncomplete="PF('dialogoVer').show();">
+                                        <f:setPropertyActionListener target="#{membroMB.membro}" value="#{membro}"/>
+                                    </b:commandButton>
+                                </b:dataTableColumn>                         
+                            </b:dataTable>
+                        </b:form>
+                    </b:panel>
+                    
+                    <p:dialog id="ver" widgetVar="dialogoVer" showEffect="clip" hideEffect="blind" resizable="false" header="Detalhes do Membro Com O ID: #{membroMB.membro.idMembro}" width="50%">
+                        <b:form>
+                            <b:panelGrid columns="2">
+                                
+                                <p:outputLabel value="Nome:"/>
+                                <h:outputText value="#{membroMB.membro.nomeMembro}"/>
+                                
+                                <p:outputLabel value="Sobrenome:"/>
+                                <h:outputText value="#{membroMB.membro.sobrenomeMembro}"/>
+                                
+                                <p:outputLabel value="Bilhete de Identidade:"/>
+                                <h:outputText value="#{membroMB.membro.biMembro}"/>
+                                
+                                <p:outputLabel value="Gênero"/>
+                                <h:outputText value="#{membroMB.membro.genero}"/>
+                                
+                                <p:outputLabel value="Data de Nascimento:"/>
+                                <h:outputText value="#{membroMB.membro.dataNascimento}">
+                                    <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                </h:outputText>
+                                
+                                <p:outputLabel value="Nome do Pai"/>
+                                <h:outputText value="#{membroMB.membro.nomePai}"/>
+                                
+                                <p:outputLabel value="Nome da Mãe"/>
+                                <h:outputText value="#{membroMB.membro.nomeMae}"/>
+                                
+                                <p:outputLabel value="Estado Civil:"/>
+                                <h:outputText value="#{membroMB.membro.estadoCivil}"/>
+                                
+                                <p:outputLabel value="Nome do Cônjuge: "/>
+                                <h:outputText value="#{membroMB.membro.conjuge}"/>
+                                
+                                <p:outputLabel value="Município:"/>
+                                <h:outputText value="#{membroMB.membro.municipio}"/>
+                                
+                                <p:outputLabel value="Data de Baptismo:"/>
+                                <h:outputText value="#{membroMB.membro.dataBaptismo}"/>
+                                
+                                <p:outputLabel value="Local de Baptismo:"/>
+                                <h:outputText value="#{membroMB.membro.localBaptismo}"/>
+                                
+                                <p:outputLabel value="Documento de Transferência:"/>
+                                <h:outputText value="#{membroMB.membro.documentoTransferência}"/>
+                                
+                                <p:outputLabel value="Tipo de Membro:"/>
+                                <h:outputText value="#{membroMB.membro.tipoMembro}"/>
+                                
+                                <p:outputLabel value="Rua:"/>
+                                <h:outputText value="#{membroMB.membro.rua}"/>
+                                
+                                <p:outputLabel value="Telefone:"/>
+                                <h:outputText value="#{membroMB.membro.telefone}"/>
+                            </b:panelGrid>
+                        </b:form>
+                    </p:dialog>
+
+                </b:column>
+
+            </b:row>
+
+        </b:container>    
+
+        <style type="text/css">
+            .sub-header {
+                border-bottom: 1px solid #eee;
+                padding-bottom: 10px;
+            }
+            .navbar-fixed-top {
+                border: 0 none;
+            }
+            .sidebar {
+                display: none;
+            }
+            @media (min-width: 768px) {
+                .sidebar {
+                    background-color: #f5f5f5;
+                    border-right: 1px solid #eee;
+                    bottom: 0;
+                    display: block;
+                    left: 0;
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                    padding: 20px;
+                    position: fixed;
+                    top: 51px;
+                    z-index: 1000;
+                }
+            }
+            .nav-list {
+                margin-bottom: 20px;
+                margin-left: -20px;
+                margin-right: -21px;
+            }
+            .nav-list > li > a {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .nav-list > .active > a, .nav-sidebar > .active > a:hover, .nav-sidebar > .active > a:focus {
+                background-color: #428bca;
+                color: #fff;
+            }
+            .main {
+                padding: 20px;
+            }
+            @media (min-width: 768px) {
+                .main {
+                    padding-left: 40px;
+                    padding-right: 40px;
+                }
+            }
+            .main .page-header {
+                margin-top: 0;
+            }
+            .placeholders {
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            .placeholders h4 {
+                margin-bottom: 0;
+            }
+            .placeholder {
+                margin-bottom: 20px;
+            }
+            .placeholder img {
+                border-radius: 50%;
+                display: inline-block;
+            }
+        </style>
+
+
+    </h:body>
+</html>
+

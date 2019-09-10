@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
+        <file>
+            <url>web/WEB-INF/menus/lista-membro_1.xhtml</url>
+            <bookmark id="2">
+                <name/>
+                <line>32</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/java/managedBean/MembroMB.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>140</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Hp/Documents/NetBeansProjects/secretariaIel/src/java/managedBean/LoginMB.java</file>
+            <file>file:/C:/Users/Hp/Documents/NetBeansProjects/secretariaIel/src/java/modelo/Funcionario.java</file>
+            <file>file:/C:/Users/Hp/Documents/NetBeansProjects/secretariaIel/web/WEB-INF/menus/menu_base.xhtml</file>
+        </group>
+    </open-files>
+</project-private>
