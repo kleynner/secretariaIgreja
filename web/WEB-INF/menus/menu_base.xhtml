@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>I.E.L - Administração</title>
+        <meta name="author" content="The Author"></meta>
+    </h:head>
+    <!-- Add 50px padding top to the body for the navbar -->
+    <h:body style="padding-top: 50px; padding-bottom: 20px;">
+        <b:navBar brand="" brandHref="#" inverse="true" fixed="top">
+
+            <h:link outcome="/index">
+                <h4 style="color: #c0c0c0; margin-top: 1%">Igreja Evangélica do Lubango</h4>
+            </h:link>
+            
+                <h5 style="margin-left: 70%;margin-top: -3%; color: white">
+                    Bem Vindo, <b>#{loginMB.usuarioAutenticado.funcionario}</b> !!!
+                    <b:form style="margin-left: 0%; margin-top: 0%">
+                        <b:commandButton action="#{loginMB.logout()}" icon="log-out" value="Sair" look="danger" size="xs"/>                        
+                    </b:form>
+                </h5>
+        </b:navBar>
+        <b:jumbotron>
+            <b:container>
+                <h1>Igreja Evangélica do Lubango!</h1>
+                <p>Bem Vindo(a) a Igreja Evangélica do Lubango, o seu Sistema de Gestão de Membros, Cartas de Recomendação, 
+                    Cartas de Transferência, Cartões de Membros, e muito mais...
+                </p>
+                <!--<p>
+                    <a href="https://uniaolage.com" class="btn btn-lg btn-info">Ver Site »</a>
+                </p>-->
+            </b:container>
+        </b:jumbotron>
+    </h:body>
+</html>

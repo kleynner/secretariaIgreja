@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>I.E.L - Administração</title>
+        <meta name="author" content="The Author"></meta>
+    </h:head>
+    <!-- Add 50px padding top to the body for the navbar -->
+    <h:body style="padding-top: 50px; padding-bottom: 20px;">
+        <b:navBar brand="Igreja Evangélica do Lubango" brandHref="#" inverse="true" fixed="top">
+
+            <b:panelGrid columns="1" id="hpglogin" >
+                <h:form style="margin-top: -40px" styleClass="navbar-form navbar-right">
+                    <b:growl id="growl"/>
+                    <div class="form-group">
+                        <b:inputText placeholder="Email" fieldSize="sm" id="usuario" value="#{loginMB.nomeUsuario}"/>
+                    </div>
+                    <div class="form-group">
+                        <b:inputText placeholder="Senha" fieldSize="sm" value="#{loginMB.password}" id="senha" type="password" />
+                    </div> 
+                    <b:commandButton action="#{loginMB.autenticar()}" update="hpglogin, growl" value="Entrar" look="success" icon="chevron-right" iconAlign="right"/>
+                </h:form>
+            </b:panelGrid>
+        </b:navBar>
+        <b:jumbotron>
+            <b:container>
+                <h1>Igreja Evangélica do Lubango!</h1>
+                <p>Bem Vindo(a) a Igreja Evangélica do Lubango, o seu Sistema de Gestão de Membros, Cartas de Recomendação, 
+                    Cartas de Transferência, Cartões de Membros, e muito mais...
+                </p>
+                <p>
+                    <a href="https://uniaolage.com" class="btn btn-lg btn-info">Ver Site »</a>
+                </p>
+            </b:container>
+
+        </b:jumbotron>
+        <b:container>
+            <b:row>
+                <b:column col-md="4">
+                    <h2>Membros</h2>
+                    <p>
+                        São considerados membros da Igreja Evangélica do Lubango, todos aqueles individuos que fazem parte da nossa congregação,
+                        e são divididos em: ouvintes, catecúmenos, disciplina e em comunhão.
+                    </p>
+                    <p><b:button outcome="" value="Ver mais »"/></p>
+                </b:column>
+                <b:column col-md="4">
+                    <h2>Recomendação</h2>
+                    <p>
+                        A carta de recomendação, é um documento que a igreja passa como identificação dos membros que de alguma forma 
+                        pretendem se deslocam temporâriamente para uma outra igreja.
+                    </p>
+                    <p><b:button outcome="" value="Ver mais »"/></p>
+                </b:column>
+                <b:column col-md="4">
+                    <h2>Transferência</h2>
+                    <p>
+                        A carta de transferência é um documento que a igreja passa como identificação dos membros que de alguma forma
+                        pretendem se deslocar definitivamente para uma outra Igreja.
+                    </p>
+                    <p><b:button outcome="" value="Ver mais »"/></p>
+                </b:column>
+            </b:row>
+            <hr/>
+            <footer>
+                <p>Igreja Evangélica do Lubango © 2019
+                    <br/>
+                    powered by: kulley
+                    <br/>
+                    +244 931 963 653                    
+                </p>
+            </footer>
+        </b:container>
+
+    </h:body>
+</html>
